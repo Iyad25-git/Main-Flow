@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wikings - Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let chevrons = document.querySelectorAll(".chevron");
+            
+            chevrons.forEach(chevron => {
+                chevron.addEventListener("click", function (event) {
+                    event.stopPropagation();
+                    let submenu = this.parentElement.nextElementSibling;
+                    
+                    document.querySelectorAll(".sub-menu").forEach(menu => {
+                        if (menu !== submenu) {
+                            menu.classList.remove("active");
+                        }
+                    });
+                    
+                    submenu.classList.toggle("active");
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Wikings: Footwear Fit for a King!</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="#">Products</a>
+                    <ul class="dropdown-menu">
+                        <li class="product-item">
+                            <a href="#">Ring Sandals</a> <span class="chevron">&gt;</span>
+                            <ul class="sub-menu">
+                                <li><a href="ring_sandals.html">Product Info</a></li>
+                            </ul>
+                        </li>
+                        <li class="product-item">
+                            <a href="#">Classic Clogs</a> <span class="chevron">&gt;</span>
+                            <ul class="sub-menu">
+                                <li><a href="lightweight_classic_clogs.html">Product Info</a></li>
+                            </ul>
+                        </li>
+                        <li class="product-item">
+                            <a href="#">Casual Shoes (Lace)</a> <span class="chevron">&gt;</span>
+                            <ul class="sub-menu">
+                                <li><a href="laceup_casual_shoes.html">Product Info</a></li>
+                            </ul>
+                        </li>
+                        <li class="product-item">
+                            <a href="#">Formal Shoes</a> <span class="chevron">&gt;</span>
+                            <ul class="sub-menu">
+                                <li><a href="grip_formal_shoes.html">Product Info</a></li>
+                            </ul>
+                        </li>
+                        <li class="product-item">
+                            <a href="#">Brown Casual</a> <span class="chevron">&gt;</span>
+                            <ul class="sub-menu">
+                                <li><a href="brown_casual.html">Product Info</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <img src="hero.jpg" alt="Man sitting with laptop">
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Wikings. All rights reserved.</p>
+        <p><a href="#">Privacy Policy</a></p>
+    </footer>
+</body>
+</html>
